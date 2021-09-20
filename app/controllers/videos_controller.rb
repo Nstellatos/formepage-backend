@@ -5,9 +5,9 @@ class VideosController < ApplicationController
     end
     def create 
         video = Video.create(video_params)
-        url = params[:video][:video_url]
-        url = url.match(/(?<=video\/)\d{10,}/)
-        video.video_url = url
+        # url = params[:video][:video_url]
+        # url = url.match(/(?<=video\/)\d{10,}/)
+        #video.video_url = url
         render json: video 
     end
 
