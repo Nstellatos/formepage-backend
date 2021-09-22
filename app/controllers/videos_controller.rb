@@ -5,15 +5,20 @@ class VideosController < ApplicationController
     end
     def create 
         video = Video.create(video_params)
+        if video.save
+            render json: video, status: :created
+        else
+            render json: video.errors, status: :unprocessable_entity
+        end
+    end
         # url = params[:video][:video_url]
         # url = url.match(/(?<=video\/)\d{10,}/)
         #video.video_url = url
-        render json: video 
-    end
+    
 
     private
     def video_params 
-        params.require(:video).permit(:video_url)
+        params.require(:video).permit(:video_url, :category_id)
     end
 end
 
