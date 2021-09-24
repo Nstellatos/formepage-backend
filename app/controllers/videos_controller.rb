@@ -14,7 +14,14 @@ class VideosController < ApplicationController
         # url = params[:video][:video_url]
         # url = url.match(/(?<=video\/)\d{10,}/)
         #video.video_url = url
-    
+def destroy
+    video = Video.find(params[:id])
+    if video.destroy 
+        render json: {message: "video deleted"} 
+    else
+        render json: {message: "hmm.. something went wrong Error: #{video.errors.full_message}"}
+    end
+
 
     private
     def video_params 
