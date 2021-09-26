@@ -21,6 +21,7 @@ def destroy
     else
         render json: {message: "hmm.. something went wrong Error: #{video.errors.full_message}"}
     end
+end
 
 
     private
