@@ -1,5 +1,5 @@
 class Video < ApplicationRecord
-    before_save :format_link
+    before_create :format_link
     belongs_to :category
 
     def format_link
