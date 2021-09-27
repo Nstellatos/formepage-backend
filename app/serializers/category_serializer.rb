@@ -1,4 +1,4 @@
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :name, :id
   has_many :videos
 end

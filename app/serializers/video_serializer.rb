@@ -1,5 +1,5 @@
 class VideoSerializer < ActiveModel::Serializer
-  attributes :id, :video_url
+  attributes :video_url, :category, :id
   belongs_to :category
   
 end
